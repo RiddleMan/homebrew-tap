@@ -6,7 +6,7 @@ class Run < Formula
   license "MIT"
 
   def install
-    system "./install.sh"
+    prefix.install "run.sh"
   end
 
   test do
