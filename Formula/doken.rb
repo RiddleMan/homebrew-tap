@@ -1,8 +1,8 @@
 class Doken < Formula
   desc "Tool for getting tokens from OAuth 2/OpenID Connect providers"
   homepage "https://github.com/RiddleMan/doken"
-  url "https://github.com/RiddleMan/doken/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "a0cf747cb7bd824391102c68951448c97d32988f35370d67b22881ffba29c1b2"
+  url "https://github.com/RiddleMan/doken/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "6409700d41c46f3501ea0c8b9bb634045add4506bd337c889dc94f3aaf10e629"
   license any_of: ["MIT"]
   head "https://github.com/RiddleMan/doken.git", branch: "main"
 
@@ -14,6 +14,6 @@ class Doken < Formula
 
   test do
     output = shell_output("#{bin}/doken --version")
-    assert_match "doken 0.2.1", output
+    assert_match "doken 0.3.0", output
   end
 end
