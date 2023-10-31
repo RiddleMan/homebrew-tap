@@ -7,7 +7,7 @@ class GitBranchHistory < Formula
   head "https://github.com/RiddleMan/git-branch-history.git", branch: "main"
 
   depends_on "rust" => :build
-  depends_on "git"
+  depends_on "openssl@3"
 
   def install
     system "cargo", "install", *std_cargo_args
