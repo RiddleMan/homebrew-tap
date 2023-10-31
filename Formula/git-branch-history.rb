@@ -1,4 +1,4 @@
-class Doken < Formula
+class GitBranchHistory < Formula
   desc "Tool for navigating through a history of branch checkouts"
   homepage "https://github.com/RiddleMan/git-branch-history"
   url "https://github.com/RiddleMan/git-branch-history/archive/refs/tags/v0.1.0.tar.gz"
