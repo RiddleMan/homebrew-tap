@@ -7,9 +7,9 @@ class Doken < Formula
   head "https://github.com/RiddleMan/doken.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/RiddleMan/homebrew-tap/releases/download/doken-0.4.0"
-    sha256 cellar: :any_skip_relocation, ventura:      "e4cb32dd6fddd63bf2f7863fb9ff3406962f626977f1e3ab378f1333dadc4bcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b98db9300600e8738caf4a1c4b5da0b033d09ed55b430d9f44797cb74e92e19c"
+    root_url "https://github.com/RiddleMan/homebrew-tap/releases/download/doken-0.4.1"
+    sha256 cellar: :any_skip_relocation, ventura:      "447bac82f031f7c0824b7999a51591b665272e7525a459ac532e611e03b15883"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb6e29c813df3b77da59765dfb148a80d83237b576a5dc694a4aebef79a28708"
   end
 
   depends_on "rust" => :build
