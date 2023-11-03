@@ -1,13 +1,13 @@
 class Doken < Formula
   desc "Tool for getting tokens from OAuth 2.0/OpenID Connect providers"
   if Hardware::CPU.type == :arm
-    url "https://github.com/RiddleMan/doken/releases/download/v0.5.0/doken-aarch64-apple-darwin.tar.xz"
-    sha256 "aa36417de5c513828e33ec96b7f5447c57d8d3897e1546b1fde561771743f156"
+    url "https://github.com/RiddleMan/doken/releases/download/v0.6.0/doken-aarch64-apple-darwin.tar.xz"
+    sha256 "1a00204a059b372ee504588170d4002530f501d4e1044536402780affde5ad2e"
   else
-    url "https://github.com/RiddleMan/doken/releases/download/v0.5.0/doken-x86_64-apple-darwin.tar.xz"
-    sha256 "3657a1da1b07c831cd8a07e3a9f169c567638565c0c45a887174f56261cbe552"
+    url "https://github.com/RiddleMan/doken/releases/download/v0.6.0/doken-x86_64-apple-darwin.tar.xz"
+    sha256 "11b34837f91929c0691d7b43b7c384916805cbd8a5cd86f03070ac154b8041cc"
   end
-  version "0.5.0"
+  version "0.6.0"
 
   def install
     bin.install "doken"
