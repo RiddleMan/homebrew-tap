@@ -1,16 +1,39 @@
 class Doken < Formula
   desc "Tool for getting tokens from OAuth 2.0/OpenID Connect providers"
-  if Hardware::CPU.type == :arm
-    url "https://github.com/RiddleMan/doken/releases/download/v0.6.1/doken-aarch64-apple-darwin.tar.xz"
-    sha256 "cf319a6394944bff2a2485b129bf426a11427f22079e3f098a79111ff19764e8"
-  else
-    url "https://github.com/RiddleMan/doken/releases/download/v0.6.1/doken-x86_64-apple-darwin.tar.xz"
-    sha256 "25c8f6c832ec51aac278321395cfbe78621d6d2111ccafa125afb2cb34d11939"
+  version "0.6.2"
+  on_macos do
+    on_arm do
+      url "https://github.com/RiddleMan/doken/releases/download/v0.6.2/doken-aarch64-apple-darwin.tar.xz"
+      sha256 "bf11211533ad084db2b2a2f0af40d15dc6e1895a6688110ce65d36f9d8d50ecd"
+    end
+    on_intel do
+      url "https://github.com/RiddleMan/doken/releases/download/v0.6.2/doken-x86_64-apple-darwin.tar.xz"
+      sha256 "94ef643c2b0473a7625a782fe644c3ab8ad192477e97f11dc7a344d496f63768"
+    end
   end
-  version "0.6.1"
+  on_linux do
+    on_intel do
+      url "https://github.com/RiddleMan/doken/releases/download/v0.6.2/doken-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "4ce3122e10baf4e9c0839e06565dc4ec90995e382f2f0cbc866c9f5fd23583a0"
+    end
+  end
 
   def install
-    bin.install "doken"
+    on_macos do
+      on_arm do
+        bin.install "doken"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "doken"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "doken"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
