@@ -1,25 +1,30 @@
 class Doken < Formula
   desc "Tool for getting tokens from OAuth 2.0/OpenID Connect providers"
   homepage "https://github.com/RiddleMan/doken"
-  version "0.7.1"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/RiddleMan/doken/releases/download/v0.7.1/doken-aarch64-apple-darwin.tar.xz"
-      sha256 "bcdd43c6259596d539e0e66b031f2687b9912bc43e33761c1bc546c10464fb47"
+      url "https://github.com/RiddleMan/doken/releases/download/v0.8.0/doken-aarch64-apple-darwin.tar.xz"
+      sha256 "2512893b68582b947290167c4c3ecb5c629b6afd98f45a0e3c696a6ac1dfc0cc"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/RiddleMan/doken/releases/download/v0.7.1/doken-x86_64-apple-darwin.tar.xz"
-      sha256 "43c0d729e68c45e3814314710219b09257c0a48849c3632a5b13d62390f9a255"
+      url "https://github.com/RiddleMan/doken/releases/download/v0.8.0/doken-x86_64-apple-darwin.tar.xz"
+      sha256 "61352ba31e9ba5f1d7c983a73743a61532ed1980768f377a8c1bee2b31a0af8c"
     end
   end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/RiddleMan/doken/releases/download/v0.7.1/doken-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "0654dd470fd842d4ead94abe171cf407216389797c3011281f1b689cd7bdd712"
-    end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/RiddleMan/doken/releases/download/v0.8.0/doken-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "713c0fdc352241152b0071c75edd7e91990321ea0c419e47fbd598e918fc71a5"
   end
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":              {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -37,15 +42,9 @@ class Doken < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "doken"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "doken"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "doken"
-    end
+    bin.install "doken" if OS.mac? && Hardware::CPU.arm?
+    bin.install "doken" if OS.mac? && Hardware::CPU.intel?
+    bin.install "doken" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
