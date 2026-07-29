@@ -1,20 +1,20 @@
 class Doken < Formula
   desc "Tool for getting tokens from OAuth 2.0/OpenID Connect providers"
   homepage "https://github.com/RiddleMan/doken"
-  version "0.9.0"
+  version "0.10.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/RiddleMan/doken/releases/download/v0.9.0/doken-aarch64-apple-darwin.tar.xz"
-      sha256 "e749f5967cda685f8b14d511eeb44916ff62360340efd9ca5ddc909a15e09650"
+      url "https://github.com/RiddleMan/doken/releases/download/v0.10.0/doken-aarch64-apple-darwin.tar.xz"
+      sha256 "46f9e6a7f1748d018ab2ea13d7a4ed48759f1a13cebe4f08cf982deba3dc9b95"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/RiddleMan/doken/releases/download/v0.9.0/doken-x86_64-apple-darwin.tar.xz"
-      sha256 "244a1b75a32e9b7ed906914183d147f2c4a0790790a83ff193adf5105269f734"
+      url "https://github.com/RiddleMan/doken/releases/download/v0.10.0/doken-x86_64-apple-darwin.tar.xz"
+      sha256 "97b37314de6eea210d6578ab8d53b30c5244cdf491afb869fcef5e61efd7b59b"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/RiddleMan/doken/releases/download/v0.9.0/doken-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "d4717a24f54aa90b486cf8fc5672f466058d063e1c3c45fc2374582043639b25"
+    url "https://github.com/RiddleMan/doken/releases/download/v0.10.0/doken-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "fb373222ca141785842b2b885d679ddd6048688cb64bad865483afe72f23e081"
   end
 
   BINARY_ALIASES = {
