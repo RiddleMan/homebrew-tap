@@ -1,8 +1,8 @@
 class GitBranchHistory < Formula
   desc "Tool for navigating through a history of branch checkouts"
   homepage "https://github.com/RiddleMan/git-branch-history"
-  url "https://github.com/RiddleMan/git-branch-history/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "c1add4ec407451463a74cdcbebb0cb7927b24ff9d84dfeed555fcfb3852d94c5"
+  url "https://github.com/RiddleMan/git-branch-history/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "cb3ac5c8c06037b04d89c055e85f75e7018d2819bd96c3ad130c2c26e90468fa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/RiddleMan/git-branch-history.git", branch: "main"
 
